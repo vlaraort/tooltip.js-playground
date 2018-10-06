@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Demo</title>
+</head>
+
+<body>
+    <style>
+        .link-anchor {
+            position: relative;
+            width: 0;
+            font-size: .8em;
+            opacity: 0;
+            transition: opacity .2s ease-in-out;
+        }
+
+        .anchor-wrapper {
+            border: none;
+        }
+
+        .anchor-wrapper:hover .link-anchor {
+            opacity: 1;
+        }
+
+        section h1[id]:focus,
+        section h2[id]:focus,
+        section h3[id]:focus,
+        section h4[id]:focus,
+        section h5[id]:focus {
+            outline: 0;
+        }
+
+        p.thin {
+            font-weight: 100;
+            margin: 0;
+            line-height: 1.2em;
+        }
+
+        p.bold {
+            font-weight: 900;
+            margin: 0;
+            margin-top: -5px;
+        }
+
+        .rel {
+            width: 30%;
+            margin: 0 auto;
+            position: relative;
+            text-align: center;
+            padding: 20px;
+            border-style: dotted;
+            border-color: white;
+            border-width: medium;
+        }
+
+        .tooltip {
+            position: absolute;
+            background: #FFC107;
+            color: black;
+            width: 150px;
+            border-radius: 3px;
+            box-shadow: 0 0 2px rgba(0, 0, 0, 0.5);
+            padding: 10px;
+            text-align: center;
+        }
+
+        .style5 .tooltip {
+            background: #1E252B;
+            color: #FFFFFF;
+            max-width: 200px;
+            width: auto;
+            font-size: .8rem;
+            padding: .5em 1em;
+        }
+
+        .tooltip .tooltip-arrow {
+            width: 0;
+            height: 0;
+            border-style: solid;
+            position: absolute;
+            margin: 5px;
+        }
+
+        .tooltip .tooltip-arrow {
+            border-color: #FFC107;
+        }
+
+        .style5 .tooltip .tooltip-arrow {
+            border-color: #1E252B;
+        }
+
+        .tooltip[x-placement^="top"] {
+            margin-bottom: 5px;
+        }
+
+        .tooltip[x-placement^="top"] .tooltip-arrow {
+            border-width: 5px 5px 0 5px;
+            border-left-color: transparent;
+            border-right-color: transparent;
+            border-bottom-color: transparent;
+            bottom: -5px;
+            left: calc(50% - 5px);
+            margin-top: 0;
+            margin-bottom: 0;
+        }
+
+        .tooltip[x-placement^="bottom"] {
+            margin-top: 5px;
+        }
+
+        .tooltip[x-placement^="bottom"] .tooltip-arrow {
+            border-width: 0 5px 5px 5px;
+            border-left-color: transparent;
+            border-right-color: transparent;
+            border-top-color: transparent;
+            top: -5px;
+            left: calc(50% - 5px);
+            margin-top: 0;
+            margin-bottom: 0;
+        }
+
+        .tooltip[x-placement^="right"] {
+            margin-left: 5px;
+        }
+
+        .tooltip[x-placement^="right"] .tooltip-arrow {
+            border-width: 5px 5px 5px 0;
+            border-left-color: transparent;
+            border-top-color: transparent;
+            border-bottom-color: transparent;
+            left: -5px;
+            top: calc(50% - 5px);
+            margin-left: 0;
+            margin-right: 0;
+        }
+
+        .tooltip[x-placement^="left"] {
+            margin-right: 5px;
+        }
+
+        .tooltip[x-placement^="left"] .tooltip-arrow {
+            border-width: 5px 0 5px 5px;
+            border-top-color: transparent;
+            border-right-color: transparent;
+            border-bottom-color: transparent;
+            right: -5px;
+            top: calc(50% - 5px);
+            margin-left: 0;
+            margin-right: 0;
+        }
+    </style>
+    <p>
+        Lorem ipsum dolor sit amet consectetur adipiscing, elit parturient sem vitae posuere, risus vestibulum senectus scelerisque
+        sollicitudin. Vel euismod nullam nisi sapien primis vivamus lobortis ultricies, molestie parturient sociosqu mi est
+        in justo, nam sem class maecenas cubilia ad semper. Class ullamcorper at aenean nibh tempor litora sem sagittis natoque
+        facilisi, aliquam curae neque bibendum orci praesent tortor congue nunc, augue pulvinar mus senectus conubia laoreet
+        platea netus mi. Sed morbi sapien ad placerat faucibus luctus nisi cubilia, ligula varius semper ultrices mattis
+        platea fringilla ornare magna, class rutrum cum neque vehicula aliquam eu. Eget malesuada faucibus primis platea
+        tortor dis nulla potenti convallis bibendum dignissim orci himenaeos, nostra vestibulum donec vulputate vel sapien
+        sagittis quisque ante cubilia elementum et. Fusce vitae eu tortor montes lectus dictum penatibus, ligula consequat
+        odio aptent ornare turpis duis aliquet, molestie tristique venenatis aliquam at nec. Malesuada nisl curabitur gravida
+        mus blandit dictum, cursus in quam odio posuere hac sodales, sagittis mattis penatibus ut quisque. Nam tortor interdum
+        auctor scelerisque ultrices dictum platea lobortis luctus duis, netus pretium vivamus felis dapibus egestas litora
+        viverra porta cras at, dis curae fermentum per aenean porttitor vulputate pellentesque parturient. Fames rhoncus
+        ligula montes nibh per blandit cum etiam cubilia elementum ullamcorper, aenean nec dignissim ornare aliquet fringilla
+        cras bibendum ultrices imperdiet, egestas aliquam posuere urna leo ante lacus placerat condimentum sociis. Fermentum
+        vestibulum nullam maecenas eros vivamus feugiat orci, hac tellus imperdiet tincidunt lobortis quam. Dictum lobortis
+        pharetra nam risus magna habitasse purus, sed erat fusce malesuada vitae integer facilisi euismod, morbi volutpat
+        montes auctor porta hendrerit. Rhoncus turpis litora imperdiet velit felis duis sapien, ullamcorper penatibus sociis
+        justo ultricies phasellus elementum suspendisse, quam class nibh aliquet risus lobortis. Morbi sodales lectus mus
+        egestas eros blandit, suspendisse dapibus rutrum sapien nisl elementum, donec dui platea imperdiet urna. Nullam fusce
+        ut arcu facilisis ac fermentum vestibulum praesent fringilla enim integer, est netus malesuada posuere nec cras nostra
+        pharetra dui mauris. Habitant dignissim et imperdiet auctor duis dui hac per urna erat, ligula praesent nisl facilisis
+        aptent netus varius rhoncus nam non, mus magnis congue massa risus placerat nostra pellentesque justo. Accumsan nostra
+        mollis scelerisque venenatis cras massa natoque sociosqu, odio bibendum tempus purus sem nisl enim sed sapien, per
+        turpis vestibulum interdum pulvinar conubia ut. Auctor ullamcorper conubia taciti inceptos ornare tincidunt bibendum,
+        primis urna penatibus sollicitudin vulputate netus leo natoque, massa lectus cum non phasellus suspendisse.
+    </p>
+    <button>Show tooltip</button>
+    <p>
+        Lorem ipsum dolor sit amet consectetur adipiscing, elit parturient sem vitae posuere, risus vestibulum senectus scelerisque
+        sollicitudin. Vel euismod nullam nisi sapien primis vivamus lobortis ultricies, molestie parturient sociosqu mi est
+        in justo, nam sem class maecenas cubilia ad semper. Class ullamcorper at aenean nibh tempor litora sem sagittis natoque
+        facilisi, aliquam curae neque bibendum orci praesent tortor congue nunc, augue pulvinar mus senectus conubia laoreet
+        platea netus mi. Sed morbi sapien ad placerat faucibus luctus nisi cubilia, ligula varius semper ultrices mattis
+        platea fringilla ornare magna, class rutrum cum neque vehicula aliquam eu. Eget malesuada faucibus primis platea
+        tortor dis nulla potenti convallis bibendum dignissim orci himenaeos, nostra vestibulum donec vulputate vel sapien
+        sagittis quisque ante cubilia elementum et. Fusce vitae eu tortor montes lectus dictum penatibus, ligula consequat
+        odio aptent ornare turpis duis aliquet, molestie tristique venenatis aliquam at nec. Malesuada nisl curabitur gravida
+        mus blandit dictum, cursus in quam odio posuere hac sodales, sagittis mattis penatibus ut quisque. Nam tortor interdum
+        auctor scelerisque ultrices dictum platea lobortis luctus duis, netus pretium vivamus felis dapibus egestas litora
+        viverra porta cras at, dis curae fermentum per aenean porttitor vulputate pellentesque parturient. Fames rhoncus
+        ligula montes nibh per blandit cum etiam cubilia elementum ullamcorper, aenean nec dignissim ornare aliquet fringilla
+        cras bibendum ultrices imperdiet, egestas aliquam posuere urna leo ante lacus placerat condimentum sociis. Fermentum
+        vestibulum nullam maecenas eros vivamus feugiat orci, hac tellus imperdiet tincidunt lobortis quam. Dictum lobortis
+        pharetra nam risus magna habitasse purus, sed erat fusce malesuada vitae integer facilisi euismod, morbi volutpat
+        montes auctor porta hendrerit. Rhoncus turpis litora imperdiet velit felis duis sapien, ullamcorper penatibus sociis
+        justo ultricies phasellus elementum suspendisse, quam class nibh aliquet risus lobortis. Morbi sodales lectus mus
+        egestas eros blandit, suspendisse dapibus rutrum sapien nisl elementum, donec dui platea imperdiet urna. Nullam fusce
+        ut arcu facilisis ac fermentum vestibulum praesent fringilla enim integer, est netus malesuada posuere nec cras nostra
+        pharetra dui mauris. Habitant dignissim et imperdiet auctor duis dui hac per urna erat, ligula praesent nisl facilisis
+        aptent netus varius rhoncus nam non, mus magnis congue massa risus placerat nostra pellentesque justo. Accumsan nostra
+        mollis scelerisque venenatis cras massa natoque sociosqu, odio bibendum tempus purus sem nisl enim sed sapien, per
+        turpis vestibulum interdum pulvinar conubia ut. Auctor ullamcorper conubia taciti inceptos ornare tincidunt bibendum,
+        primis urna penatibus sollicitudin vulputate netus leo natoque, massa lectus cum non phasellus suspendisse.
+    </p>
+    <p>
+        Lorem ipsum dolor sit amet consectetur adipiscing, elit parturient sem vitae posuere, risus vestibulum senectus scelerisque
+        sollicitudin. Vel euismod nullam nisi sapien primis vivamus lobortis ultricies, molestie parturient sociosqu mi est
+        in justo, nam sem class maecenas cubilia ad semper. Class ullamcorper at aenean nibh tempor litora sem sagittis natoque
+        facilisi, aliquam curae neque bibendum orci praesent tortor congue nunc, augue pulvinar mus senectus conubia laoreet
+        platea netus mi. Sed morbi sapien ad placerat faucibus luctus nisi cubilia, ligula varius semper ultrices mattis
+        platea fringilla ornare magna, class rutrum cum neque vehicula aliquam eu. Eget malesuada faucibus primis platea
+        tortor dis nulla potenti convallis bibendum dignissim orci himenaeos, nostra vestibulum donec vulputate vel sapien
+        sagittis quisque ante cubilia elementum et. Fusce vitae eu tortor montes lectus dictum penatibus, ligula consequat
+        odio aptent ornare turpis duis aliquet, molestie tristique venenatis aliquam at nec. Malesuada nisl curabitur gravida
+        mus blandit dictum, cursus in quam odio posuere hac sodales, sagittis mattis penatibus ut quisque. Nam tortor interdum
+        auctor scelerisque ultrices dictum platea lobortis luctus duis, netus pretium vivamus felis dapibus egestas litora
+        viverra porta cras at, dis curae fermentum per aenean porttitor vulputate pellentesque parturient. Fames rhoncus
+        ligula montes nibh per blandit cum etiam cubilia elementum ullamcorper, aenean nec dignissim ornare aliquet fringilla
+        cras bibendum ultrices imperdiet, egestas aliquam posuere urna leo ante lacus placerat condimentum sociis. Fermentum
+        vestibulum nullam maecenas eros vivamus feugiat orci, hac tellus imperdiet tincidunt lobortis quam. Dictum lobortis
+        pharetra nam risus magna habitasse purus, sed erat fusce malesuada vitae integer facilisi euismod, morbi volutpat
+        montes auctor porta hendrerit. Rhoncus turpis litora imperdiet velit felis duis sapien, ullamcorper penatibus sociis
+        justo ultricies phasellus elementum suspendisse, quam class nibh aliquet risus lobortis. Morbi sodales lectus mus
+        egestas eros blandit, suspendisse dapibus rutrum sapien nisl elementum, donec dui platea imperdiet urna. Nullam fusce
+        ut arcu facilisis ac fermentum vestibulum praesent fringilla enim integer, est netus malesuada posuere nec cras nostra
+        pharetra dui mauris. Habitant dignissim et imperdiet auctor duis dui hac per urna erat, ligula praesent nisl facilisis
+        aptent netus varius rhoncus nam non, mus magnis congue massa risus placerat nostra pellentesque justo. Accumsan nostra
+        mollis scelerisque venenatis cras massa natoque sociosqu, odio bibendum tempus purus sem nisl enim sed sapien, per
+        turpis vestibulum interdum pulvinar conubia ut. Auctor ullamcorper conubia taciti inceptos ornare tincidunt bibendum,
+        primis urna penatibus sollicitudin vulputate netus leo natoque, massa lectus cum non phasellus suspendisse.
+    </p>
+    <script type="module">
+        import Tooltip from 'tooltip.js';
+
+
+        var btn = document.querySelector('button');
+
+        btn.onclick = function () {
+            console.log("click")
+            showTooltip(this);
+        }
+
+        function showTooltip(element) {
+            debugger;
+            // Documentation: https://popper.js.org/tooltip-documentation.html
+            const instance = new Tooltip(element, {
+                title: "Hey there",
+                trigger: "click",
+            });
+            instance.show();
+        }
+    </script>
+
+</body>
+
+</html>
